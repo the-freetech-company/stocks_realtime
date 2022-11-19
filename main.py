@@ -10,7 +10,7 @@ from twelvedata import TDClient
 # load_dotenv()
 
 
-logging.basicConfig(filename='pyparser.log', level=logging.INFO)
+logging.basicConfig(filename='/var/log/pyparser.log', level=logging.INFO)
 
 mg = MongoClient(os.environ['MONGO_PUBLIC_IP'], int(os.environ['MONGO_PORT']),
                  username=os.environ['MONGO_USER'],
