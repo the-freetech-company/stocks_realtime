@@ -39,12 +39,12 @@ ce9d45181c95   python:3.9               "bash -c '\n  apt upd…"   11 minutes a
 *I annotated the example with comments (ex: # INSERT EVENT LOG) to identify each event type expected if the program is functioning correctly.*
 ```
 root@twelvedata:/home/mark/stocks_realtime# docker exec ce9d45181c95 tail -f /var/log/pyparser.log
-INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                    # HEARTBEAT FROM WEBSOCKET
-INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6431f0>                # INSERT EVENT LOG
-INFO:root:{'event': 'price', 'symbol': 'GRT/BTC', 'currency_base': 'The Graph', 'currency_quote': 'Bitcoin', 'exchange': 'Huobi', 'type': 'Digital Currency', 'timestamp': 1668886352, 'price': 3.61e-06, 'bid': 3.6e-06, 'ask': 3.62e-06, 'day_volume': 73740, '_id': ObjectId('63792f5075127fbc251c9337')}                                                       # EVENT RECIEVED LOG
-INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6432b0>                # INSERT EVENT LOG
+INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                # HEARTBEAT FROM WEBSOCKET
+INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6431f0>            # INSERT EVENT LOG
+INFO:root:{'event': 'price', 'symbol': 'GRT/BTC', 'currency_base': 'The Graph', 'currency_quote': 'Bitcoin', 'exchange': 'Huobi', 'type': 'Digital Currency', 'timestamp': 1668886352, 'price': 3.61e-06, 'bid': 3.6e-06, 'ask': 3.62e-06, 'day_volume': 73740, '_id': ObjectId('63792f5075127fbc251c9337')}                                                   # EVENT RECIEVED LOG
+INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6432b0>            # INSERT EVENT LOG
 INFO:root:{'event': 'price', 'symbol': 'BTC/USD', 'currency_base': 'Bitcoin', 'currency_quote': 'US Dollar', 'exchange': 'Coinbase Pro', 'type': 'Digital Currency', 'timestamp': 1668886352, 'price': 16608.9, 'bid': 16608.9, 'ask': 16608.9, 'day_volume': 10798, '_id': ObjectId('63792f5175127fbc251c9338')}                                           # EVENT RECIEVED LOG
-INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                    # HEARTBEAT FROM WEBSOCKET
-INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6439a0>                # INSERT EVENT LOG
+INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                # HEARTBEAT FROM WEBSOCKET
+INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6439a0>            # INSERT EVENT LOG
 ```
 7. You are now ready to access MongoDB using the public ip, port, username, and password you defined in your `.env` file above. 
