@@ -1,4 +1,3 @@
- 
 MONGO_EXISTS=$(docker volume ls | grep mongo_data)
 PYPARSERS_EXISTS=$(docker volume ls | grep pyparsers_data)
 

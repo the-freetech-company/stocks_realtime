@@ -1,3 +1,4 @@
 websocket
 websocket-client
 pymongo
+twelvedata
