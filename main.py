@@ -25,9 +25,13 @@ def on_event(e):
 
 messages_history = []
 
+
+
+
+
 td = TDClient(apikey=os.environ["API_KEY"])
 ws = td.websocket(symbols=["BTC/USD","ETH/USD", "CRO/USD"], on_event=on_event)
-ws.subscribe(["BTC/USD", "ETH/USD", "CRO/USD"])
+# ws.subscribe(["BTC/USD", "ETH/USD", "CRO/USD"])
 ws.connect()
 while True:
     print('messages received: ', len(messages_history))

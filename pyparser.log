@@ -82,3 +82,16 @@ INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_
 INFO:ws-twelvedata:Connecting...
 INFO:ws-twelvedata:TDWebSocket opened!
 WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
