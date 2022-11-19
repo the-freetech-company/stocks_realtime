@@ -9,12 +9,12 @@ PYPARSERS_VOL_EXISTS=$(docker volume ls | grep pyparsers_data)
 
 if [ -z "$MONGO_DIR_EXISTS" ]; then
     echo "creating /opt/mongo_data/mongo_data.."
-    sudo mkdir -p /opt/mongo_data/mongo_data
+    sudo mkdir -p /opt/mongo_data
 fi
 
 if [ -z "$PYPARSERS_DIR_EXISTS" ]; then
     echo "creating /opt/mongo_data/pyparsers_data.."
-    sudo mkdir -p /opt/mongo_data/pyparsers_data
+    sudo mkdir -p /opt/pyparsers_data
 fi
 
 
