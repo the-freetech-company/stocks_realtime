@@ -47,8 +47,10 @@ INFO:root:{'event': 'price', 'symbol': 'BTC/USD', 'currency_base': 'Bitcoin', 'c
 INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                # HEARTBEAT FROM WEBSOCKET
 INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6439a0>            # INSERT EVENT LOG
 ```
-7. You are now ready to access MongoDB using the public ip, port, username, and password you defined in your `.env` file above. 
-
+7. You are now ready to access MongoDB using the public ip, port, username, and password you defined in your `.env` file above. If you need to stop the project, use:
+```
+docker compose -f stocks-compose.yml down
+```
 ## Existing Architecture, Business Requirements, New Architecture
 
 ### The Existing Architecture
