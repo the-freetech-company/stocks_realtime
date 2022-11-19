@@ -23,7 +23,7 @@ messages_history = []
 def on_event(e):
     if len(messages_history) > 0:
         collection.insert_many(messages_history)
-    print(e)
+    logging.info(str(e))
 
 
 
@@ -34,6 +34,6 @@ ws = td.websocket(symbols=["0xBTC/BTC", "ETH/BTC", "BTC/USD", "GRT/BTC", "XRP/BT
 # ws.subscribe()
 ws.connect()
 while True:
-    print('messages received: ', len(messages_history))
+    logging.info('messages received: ', len(messages_history))
     ws.heartbeat()
     time.sleep(5)
