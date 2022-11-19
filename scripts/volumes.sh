@@ -33,5 +33,5 @@ docker volume create --driver local \
     --opt o=bind pyparsers_data
 fi
 
-sudo cp main.py /opt/pyparsers_data/
-sudo cp requirements.txt /opt/pyparsers_data/
+sudo cp /home/mark/stocks_realtime/main.py /opt/pyparsers_data/
+sudo cp /home/mark/stocks_realtime/requirements.txt /opt/pyparsers_data/
