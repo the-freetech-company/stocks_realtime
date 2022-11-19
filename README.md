@@ -36,6 +36,7 @@ ce9d45181c95   python:3.9               "bash -c '\n  apt upd…"   11 minutes a
 6968a93f6181   portainer/agent:2.16.1   "./agent"                 46 minutes ago   Up 46 minutes   0.0.0.0:9001->9001/tcp, :::9001->9001/tcp       portainer_agent
 ```
 6. Tail the pyparser.log file to ensure the program is working correctly.
+<br />
 *I annotated the example with comments (ex: # INSERT EVENT LOG) to identify each event type expected if the program is functioning correctly.*
 ```
 root@twelvedata:/home/mark/stocks_realtime# docker exec ce9d45181c95 tail -f /var/log/pyparser.log
@@ -47,4 +48,4 @@ INFO:root:{'event': 'price', 'symbol': 'BTC/USD', 'currency_base': 'Bitcoin', 'c
 INFO:root:{'event': 'heartbeat', 'status': 'ok'}                                # HEARTBEAT FROM WEBSOCKET
 INFO:root:<pymongo.results.InsertOneResult object at 0x7f1dfa6439a0>            # INSERT EVENT LOG
 ```
-7. You are now ready to access MongoDB using the public ip, port, username, and password you defined in your `.env` file above. 
+1. You are now ready to access MongoDB using the public ip, port, username, and password you defined in your `.env` file above. 
