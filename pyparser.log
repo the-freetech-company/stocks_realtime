@@ -1,0 +1,84 @@
+INFO:root:<websocket._core.WebSocket object at 0x7f9b1a2e3e80>
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:<pymongo.results.InsertOneResult object at 0x7f9b1a121810>
+INFO:root:<websocket._core.WebSocket object at 0x7f23e1d87e80>
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:<pymongo.results.InsertOneResult object at 0x7f23e1bc9810>
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+ERROR:ws-twelvedata:'Collection' object is not callable. If you meant to call the 'insert' method on a 'Collection' object it is failing because no such method exists.
+ERROR:ws-twelvedata:'Collection' object is not callable. If you meant to call the 'insert' method on a 'Collection' object it is failing because no such method exists.
+ERROR:ws-twelvedata:'Collection' object is not callable. If you meant to call the 'insert' method on a 'Collection' object it is failing because no such method exists.
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+ERROR:ws-twelvedata:documents must be a non-empty list
+ERROR:ws-twelvedata:documents must be a non-empty list
+ERROR:ws-twelvedata:documents must be a non-empty list
+ERROR:ws-twelvedata:documents must be a non-empty list
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:root:Collection(Database(MongoClient(host=['192.168.1.38:27017'], document_class=dict, tz_aware=False, connect=True), 'stockdb'), 'prices')
+INFO:ws-twelvedata:Connecting...
+INFO:ws-twelvedata:TDWebSocket opened!
+WARNING:websocket:websocket connected

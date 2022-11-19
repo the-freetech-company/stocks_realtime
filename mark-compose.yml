@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_PASSWORD}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data
+  pyparsers:
+    image: python:3.9
+    tty: true
+    volumes:
+      - pyparsers_data:/home/
+    environment:
+      - API_KEY=${API_KEY}
+    command: >
+      bash -c '
+        apt update -y && \
+        apt install -y vim && \
+        python3 -m venv /home/venv/ && \
+        python3 -m pip install --upgrade pip && \
+        source /home/venv/bin/activate && \
+        pip3 install -r /home/requirements.txt && \
+        python /home/main.py'
+
+volumes:
+  mongo_data:
+    external: true
+  pyparsers_data:
+    external: true
