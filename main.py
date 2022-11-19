@@ -12,28 +12,22 @@ from twelvedata import TDClient
 
 logging.basicConfig(filename='pyparser.log', level=logging.INFO)
 
-mg = MongoClient("192.168.1.38", 27017,
-                 username="mongo",
-                 password="mongo")
-collection = mg['stockdb']['prices']
+mg = MongoClient(os.environ['MONGO_PUBLIC_IP'], int(os.environ['MONGO_PORT']),
+                 username=os.environ['MONGO_USER'],
+                 password=os.environ['MONGO_PASSWORD'])
+collection = mg['stockdb']['demo']
 logging.info(collection)
 
-messages_history = []
 
 def on_event(e):
-    if len(messages_history) > 0:
-        collection.insert_many(messages_history)
+    if e.get('event') != 'heartbeat':
+        logging.info(collection.insert_one(e))
     logging.info(str(e))
 
 
-
-
-
 td = TDClient(apikey=os.environ["API_KEY"])
-ws = td.websocket(symbols=["0xBTC/BTC", "ETH/BTC", "BTC/USD", "GRT/BTC", "XRP/BTC", "DOGE/BTC", "BNB/BTC"], on_event=on_event)
-# ws.subscribe()
+ws = td.websocket(symbols=json.loads(os.environ['SYMBOLS']), on_event=on_event)
 ws.connect()
 while True:
-    logging.info('messages received: ', len(messages_history))
     ws.heartbeat()
     time.sleep(5)

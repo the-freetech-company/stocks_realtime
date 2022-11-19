@@ -1,5 +1,5 @@
-MONGO_EXISTS=$(docker volume ls | grep mongo_data)
-PYPARSERS_EXISTS=$(docker volume ls | grep pyparsers_data)
+# MONGO_EXISTS=$(docker volume ls | grep mongo_data)
+# PYPARSERS_EXISTS=$(docker volume ls | grep pyparsers_data)
 
 if [ -z "$MONGO_EXISTS" ]; then
     docker volume create --driver local \
