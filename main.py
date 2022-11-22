@@ -10,7 +10,7 @@ logging.basicConfig(filename='/var/log/pyparser.log', level=logging.INFO)
 mg = MongoClient(os.environ['MONGO_PUBLIC_IP'], int(os.environ['MONGO_PORT']),
                  username=os.environ['MONGO_USER'],
                  password=os.environ['MONGO_PASSWORD'])
-collection = mg['stockdb']['demo']
+collection = mg['stockdb']['price_changes']
 logging.info(collection)
 
 
