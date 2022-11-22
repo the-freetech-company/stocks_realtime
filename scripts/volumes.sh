@@ -23,6 +23,8 @@ if [ -z "$MONGO_VOL_EXISTS" ]; then
     --opt type=none \
     --opt device=/opt/mongo_data/ \
     --opt o=bind mongo_data
+else 
+
 
 fi
 

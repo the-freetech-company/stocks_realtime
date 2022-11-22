@@ -1,14 +1,9 @@
-from websocket import create_connection, WebSocketConnectionClosedException
 import json
 from pymongo import MongoClient
 import logging
 import os
 import time
 from twelvedata import TDClient
-# for dev
-# from dotenv import load_dotenv
-# load_dotenv()
-
 
 logging.basicConfig(filename='/var/log/pyparser.log', level=logging.INFO)
 
@@ -29,5 +24,9 @@ td = TDClient(apikey=os.environ["API_KEY"])
 ws = td.websocket(symbols=json.loads(os.environ['SYMBOLS']), on_event=on_event)
 ws.connect()
 while True:
-    ws.heartbeat()
+    try:
+        ws.heartbeat()
+    except:
+        ws = td.websocket(symbols=json.loads(os.environ['SYMBOLS']), on_event=on_event)
+        ws.connect()
     time.sleep(5)

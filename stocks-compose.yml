@@ -2,6 +2,7 @@ version: '3.7'
 services:
   mongodb:
     image: mongo:latest
+    container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
@@ -11,6 +12,7 @@ services:
       - mongo_data:/data
   pyparsers:
     image: python:3.9
+    container_name: pyparsers
     tty: true
     volumes:
       - pyparsers_data:/home/
