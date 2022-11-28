@@ -2,3 +2,5 @@ websocket
 websocket-client
 pymongo
 twelvedata
+pandas
+python-dotenv
