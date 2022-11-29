@@ -10,7 +10,7 @@ services:
       - 27017:27017
     volumes:
       - mongo_data:/data
-  pyparsers:
+  pyprice:
     image: python:3.9
     container_name: pyparsers
     tty: true
@@ -31,10 +31,34 @@ services:
         python3 -m pip install --upgrade pip && \
         source /home/venv/bin/activate && \
         pip3 install -r /home/requirements.txt && \
-        python /home/main.py'
+        python /home/price.py'
+  pyohlc:
+    image: python:3.9
+    container_name: pyparsers
+    tty: true
+    volumes:
+      - pyparsers_data:/home/
+    environment:
+      API_KEY: ${API_KEY}
+      MONGO_PUBLIC_IP: ${MONGO_PUBLIC_IP}
+      MONGO_PORT: ${MONGO_PORT}
+      SYMBOLS: ${SYMBOLS}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+    command: >
+      bash -c '
+        apt update -y && \
+        apt install -y vim && \
+        python3 -m venv /home/venv/ && \
+        python3 -m pip install --upgrade pip && \
+        source /home/venv/bin/activate && \
+        pip3 install -r /home/requirements.txt && \
+        python /home/ohlc.py'
 
 volumes:
   mongo_data:
     external: true
-  pyparsers_data:
+  pyprice_data:
+    external: true
+  pyohlc_data:
     external: true
