@@ -75,6 +75,6 @@ def pull_ohlc_five(sc, tickers):
     logging.info(f"OHLC 5 Min #{uid} finished.")
 
 
-s.enter(0, 1, pull_ohlc_one, (s, os.environ["SYMBOLS"]))
-s.enter(0, 1, pull_ohlc_five, (s, os.environ["SYMBOLS"]))
+s.enter(0, 1, pull_ohlc_one, (s, json.loads(os.environ["SYMBOLS"])))
+s.enter(0, 1, pull_ohlc_five, (s, json.loads(os.environ["SYMBOLS"])))
 s.run()

@@ -12,10 +12,10 @@ services:
       - mongo_data:/data
   pyprice:
     image: python:3.9
-    container_name: pyparsers
+    container_name: pyprice
     tty: true
     volumes:
-      - pyparsers_data:/home/
+      - pyprice_data:/home/
     environment:
       API_KEY: ${API_KEY}
       MONGO_PUBLIC_IP: ${MONGO_PUBLIC_IP}
@@ -34,10 +34,10 @@ services:
         python /home/price.py'
   pyohlc:
     image: python:3.9
-    container_name: pyparsers
+    container_name: pyohlc
     tty: true
     volumes:
-      - pyparsers_data:/home/
+      - pyohlc_data:/home/
     environment:
       API_KEY: ${API_KEY}
       MONGO_PUBLIC_IP: ${MONGO_PUBLIC_IP}
