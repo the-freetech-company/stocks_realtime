@@ -14,8 +14,8 @@ logging.basicConfig(filename='/var/log/pyparser.log', level=logging.INFO)
 mg = MongoClient(os.environ['MONGO_PUBLIC_IP'], int(os.environ['MONGO_PORT']),
                  username=os.environ['MONGO_USER'],
                  password=os.environ['MONGO_PASSWORD'])
-collection_ohlc_one_min = mg['stockdb']['ohlc_one_min_test']
-collection_ohlc_five_min = mg['stockdb']['ohlc_five_min_test']
+collection_ohlc_one_min = mg['stockdb']['ohlc_one_min']
+collection_ohlc_five_min = mg['stockdb']['ohlc_five_min']
 logging.info(collection_ohlc_one_min)
 logging.info(collection_ohlc_five_min)
 
