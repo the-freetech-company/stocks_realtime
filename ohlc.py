@@ -6,8 +6,7 @@ import sched
 import time
 import uuid
 from twelvedata import TDClient
-from dotenv import load_dotenv, find_dotenv
-
+from datetime import datetime
 
 logging.basicConfig(filename='/var/log/pyparser.log', level=logging.INFO)
 
@@ -46,7 +45,10 @@ def pull_ohlc_one(sc, tickers):
         one = one_df.iloc[1:, :]
 
         # insert into mongo
-        logging.info(collection_ohlc_one_min.insert_many(json.loads(one.to_json(orient="records", date_format='iso'))))
+        one = json.loads(one.to_json(orient="records", date_format='iso'))
+        for i, obj in enumerate(one):
+            one[i]['datetime'] = datetime.strptime(one[i]['datetime'], "%Y-%m-%dT%H:%M:%S.%f")
+        logging.info(collection_ohlc_one_min.insert_many(one))
     logging.info(f"OHLC 1 Min #{uid} finished.")
 
 
@@ -73,10 +75,13 @@ def pull_ohlc_five(sc, tickers):
         five = five_df.iloc[1:, :]
 
         # insert into mongo
-        collection_ohlc_five_min.insert_many(json.loads(five.to_json(orient="records", date_format='iso')))
+        five = json.loads(five.to_json(orient="records", date_format='iso'))
+        for i, obj in enumerate(five):
+            five[i]['datetime'] = datetime.strptime(five[i]['datetime'], "%Y-%m-%dT%H:%M:%S.%f")
+        logging.info(collection_ohlc_one_min.insert_many(five))
     logging.info(f"OHLC 5 Min #{uid} finished.")
 
 
 s.enter(0, 1, pull_ohlc_one, (s, json.loads(os.environ["SYMBOLS"])))
-s.enter(0, 1, pull_ohlc_five, (s, json.loads(os.environ["SYMBOLS"])))
+# s.enter(0, 1, pull_ohlc_five, (s, json.loads(os.environ["SYMBOLS"])))
 s.run()
