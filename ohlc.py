@@ -26,7 +26,6 @@ def pull_ohlc_one(sc, tickers):
     uid = str(uuid.uuid4())
     logging.info("OHLC 1 Min #{uid} started.")
     # schedule next execution
-    sc.enter(60, 1, pull_ohlc_one, (sc, tickers))
     for x in tickers:
         # pull td data and convert to df
         one_min = td.time_series(
@@ -50,13 +49,13 @@ def pull_ohlc_one(sc, tickers):
             one[i]['datetime'] = datetime.strptime(one[i]['datetime'], "%Y-%m-%dT%H:%M:%S.%f")
         logging.info(collection_ohlc_one_min.insert_many(one))
     logging.info(f"OHLC 1 Min #{uid} finished.")
+    sc.enter(60, 1, pull_ohlc_one, (sc, tickers))
 
 
 def pull_ohlc_five(sc, tickers):
     uid = str(uuid.uuid4())
     logging.info("OHLC 5 Min #{uid} started.")
     # schedule next execution
-    sc.enter(300, 1, pull_ohlc_five, (sc, tickers))
     for x in tickers:
         # pull td data and convert to df
         five_min = td.time_series(
@@ -80,6 +79,7 @@ def pull_ohlc_five(sc, tickers):
             five[i]['datetime'] = datetime.strptime(five[i]['datetime'], "%Y-%m-%dT%H:%M:%S.%f")
         logging.info(collection_ohlc_one_min.insert_many(five))
     logging.info(f"OHLC 5 Min #{uid} finished.")
+    sc.enter(300, 1, pull_ohlc_five, (sc, tickers))
 
 
 s.enter(0, 1, pull_ohlc_one, (s, json.loads(os.environ["SYMBOLS"])))
