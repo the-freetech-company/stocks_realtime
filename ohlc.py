@@ -28,7 +28,7 @@ def pull_ohlc_one(sc, tickers):
     # schedule next execution
     for x in tickers:
         # pull td data and convert to df
-        one_min = td.time_series(
+        one_min = td.quote(
             symbol=x,
             interval="1min",
             outputsize=6,
@@ -58,7 +58,7 @@ def pull_ohlc_five(sc, tickers):
     # schedule next execution
     for x in tickers:
         # pull td data and convert to df
-        five_min = td.time_series(
+        five_min = td.quote(
             symbol=x,
             interval="5min",
             outputsize=2,
