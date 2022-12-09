@@ -15,7 +15,7 @@ services:
     container_name: pyprice
     tty: true
     volumes:
-      - pyprice_data:/home/
+      - ./pyprice:/home/
     environment:
       API_KEY: ${API_KEY}
       MONGO_PUBLIC_IP: ${MONGO_PUBLIC_IP}
@@ -37,7 +37,7 @@ services:
     container_name: pyohlc
     tty: true
     volumes:
-      - pyohlc_data:/home/
+      - ./pyohlc:/home/
     environment:
       API_KEY: ${API_KEY}
       MONGO_PUBLIC_IP: ${MONGO_PUBLIC_IP}
@@ -59,6 +59,4 @@ volumes:
   mongo_data:
     external: true
   pyprice_data:
-    external: true
   pyohlc_data:
-    external: true

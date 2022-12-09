@@ -31,7 +31,7 @@ def pull_ohlc_one(sc, tickers):
         one_min = td.quote(
             symbol=x,
             interval="1min",
-            outputsize=6,
+            prepost=True,
             timezone="America/New_York",
         )
         one_df = one_min.as_pandas().reset_index()
@@ -61,7 +61,7 @@ def pull_ohlc_five(sc, tickers):
         five_min = td.quote(
             symbol=x,
             interval="5min",
-            outputsize=2,
+            prepost=True,
             timezone="America/New_York",
         )
         five_df = five_min.as_pandas().reset_index()
