@@ -1,0 +1,13 @@
+gcloud compute instances create stock-instance \
+ --project=mindful-folio-287623 \
+ --zone=us-central1-a \
+ --machine-type=e2-medium \
+ --network-interface=network-tier=PREMIUM,subnet=default \
+--metadata-from-file=startup-script=user_data.sh \
+  --maintenance-policy=MIGRATE \
+  --provisioning-model=STANDARD \
+  --service-account=120480424421-compute@developer.gserviceaccount.com \
+  --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
+  --tags=http-server,https-server \
+  --create-disk=auto-delete=yes,boot=yes,device-name=stock-instance,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221206,mode=rw,size=100,type=projects/mindful-folio-287623/zones/us-central1-a/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring \
+  --reservation-affinity=any
